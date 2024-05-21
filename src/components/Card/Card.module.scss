@@ -34,6 +34,7 @@
 
   &__bottom {
     margin-top: 11px;
+    width: 250px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,10 +63,12 @@
     }
     &__name {
       padding-right: 0;
+      width: 165px;
       font-size: 18px;
     }
     &__desc {
       margin-top: 4px;
+      width: 156px;
       font-size: 12px;
       padding-right: 0px;
     }
