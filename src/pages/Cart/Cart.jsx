@@ -1,7 +1,8 @@
-import { Container } from '../../layouts/Container';
-import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
-import lineImg from '../../assets/icon/line.svg';
-import s from './Cart.module.scss';
+import { Container } from "../../layouts/Container";
+import { HeaderLogo } from "../../components/HeaderLogo/HeaderLogo";
+import lineImg from "../../assets/icon/line.svg";
+import s from "./Cart.module.scss";
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
   return (
@@ -10,7 +11,9 @@ export const Cart = () => {
         <Container>
           <div className={s.cart__top}>
             <div className={s.cart__logo}>
-              <HeaderLogo />
+              <Link to={"*"}>
+                <HeaderLogo />
+              </Link>
             </div>
             <div className={s.cart__right}>
               <div className={s.cart__order}>

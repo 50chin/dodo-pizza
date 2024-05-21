@@ -1,20 +1,18 @@
-import './styles/global.css';
-import './styles/fonts.css';
-import { Header } from '../layouts/Header';
-import { Main } from '../layouts/Main/Main';
-import { Footer } from '../layouts/Footer/Footer';
-import { WindowWidthProvider } from './providers/WidthProviders';
-import { Cart } from '../components/Cart/Cart';
+import "./styles/global.css";
+import "./styles/fonts.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Cart } from "../pages/Cart/Cart";
+import { Home } from "../pages/Home/Home";
 
 function App() {
   return (
     <>
-      {/* <Cart></Cart> */}
-      <WindowWidthProvider>
-        <Header />
-        <Main />
-        <Footer />
-      </WindowWidthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Home />} path={"*"}></Route>
+          <Route element={<Cart />} path={"/cart"}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

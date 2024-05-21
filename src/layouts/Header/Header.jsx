@@ -1,12 +1,12 @@
-import s from './Header.module.scss';
+import s from "./Header.module.scss";
 
-import mLogo from '../../assets/icon/mLogo.svg';
-import { useWindowWidth } from '../../app/providers/WidthProviders';
-
-import { Container } from '../Container';
-import { NavPanel } from '../../components/NavPanel/NavPanel';
-import { Button } from '../../ui/Button/Button';
-import { HeaderLogo } from '../../components/HeaderLogo/HeaderLogo';
+import mLogo from "../../assets/icon/mLogo.svg";
+import { useWindowWidth } from "../../app/providers/WidthProviders";
+import { Link } from "react-router-dom";
+import { Container } from "../Container";
+import { NavPanel } from "../../components/NavPanel/NavPanel";
+import { Button } from "../../ui/Button/Button";
+import { HeaderLogo } from "../../components/HeaderLogo/HeaderLogo";
 
 export const Header = () => {
   const width = useWindowWidth();
@@ -26,9 +26,11 @@ export const Header = () => {
             </div>
             <div className={s.header__bottom}>
               <NavPanel />
-              <Button type="button" variant="primary">
-                Корзина
-              </Button>
+              <Link to={"/cart"}>
+                <Button type="button" variant="primary">
+                  Корзина
+                </Button>
+              </Link>
             </div>
           </>
         ) : (
