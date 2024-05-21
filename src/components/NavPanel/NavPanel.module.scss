@@ -1,0 +1,43 @@
+.nav {
+  &__lists {
+    display: flex;
+    width: 467px;
+    justify-content: space-between;
+  }
+
+  &__list a {
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__list a:hover {
+    color: #f96900;
+  }
+}
+
+@media screen and (max-width: 432px) {
+  .nav {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &__lists {
+      gap: 8px;
+    }
+    &__list {
+      height: 31px;
+      border-radius: 100px;
+      background: #f3f3f7;
+      padding: 6px 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__list a {
+      width: max-content;
+    }
+  }
+}

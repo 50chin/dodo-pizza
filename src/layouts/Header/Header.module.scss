@@ -1,0 +1,41 @@
+.header {
+  padding: 28px 0;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__topLeft {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__tel a {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  &__tel p {
+    color: #999;
+    font-size: 15px;
+    font-weight: 400;
+    text-align-last: left;
+  }
+  &__bottom {
+    margin-top: 41px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 431px) {
+  .header {
+    padding: 12px 0 21px;
+
+    &__mLogo {
+      width: 156px;
+      height: 23px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.logo {
+  display: flex;
+  gap: 16px;
+
+  &__img {
+    width: 248px;
+    height: 48px;
+  }
+}

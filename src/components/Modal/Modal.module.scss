@@ -1,0 +1,108 @@
+.modal {
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  display: grid;
+  place-items: center;
+
+  &__wrapper {
+    position: relative;
+    padding: 30px 30px 30px 38px;
+    width: 920px;
+    height: 610px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0px 6px 55px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__left {
+    width: 540px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__left img {
+    width: 372px;
+    height: 372px;
+  }
+
+  &__right {
+    overflow: scroll;
+    padding: 30px;
+    width: 380px;
+    height: 610px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__copy {
+    margin-top: 3px;
+    color: #73798c;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__desc {
+    margin-top: 10px;
+    color: #4d4d4d;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: 400;
+    padding-bottom: 10px;
+  }
+
+  &__subtitle {
+    margin-top: 17px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__choice {
+    margin-top: 12px;
+    padding: 0 24px 0 29px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    width: 320px;
+    height: 32px;
+    border-radius: 100px;
+    background: #f3f3f7;
+  }
+  &__choice button {
+  }
+  &__choice button:nth-child(2) {
+    width: 104px;
+    height: 28px;
+    border-radius: 100px;
+    background: #fff;
+    box-shadow: 0px 3px 15px 0px rgba(6, 5, 50, 0.05);
+  }
+
+  &__cards {
+    padding: 30px 0;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__addBtn {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__closeBtn {
+    background: none;
+    position: absolute;
+    top: 10px;
+    right: -50px;
+  }
+}

@@ -1,0 +1,23 @@
+.slider {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    img {
+      width: 1060px;
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 431px) {
+  .slider {
+    &__wrapper {
+      img {
+        width: 250px;
+        height: 93px;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.popular {
+  padding: 30px 0 0;
+  &__wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__card {
+    width: 250px;
+    height: 104px;
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 6px 25px 0px rgba(6, 5, 50, 0.05);
+
+    img {
+      width: 76px;
+      height: 76px;
+    }
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  &__price {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 431px) {
+  .popular {
+    display: none;
+    &__wrapper {
+      margin-top: 10px;
+    }
+  }
+}

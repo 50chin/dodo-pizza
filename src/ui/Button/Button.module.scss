@@ -1,0 +1,57 @@
+.button {
+  border-radius: 1000px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+
+  &_bigPrimary {
+    width: 320px;
+    height: 48px;
+    background: #f96900;
+    color: #fff;
+  }
+  &_bigPrimary:hover {
+    background: #ed5d08;
+  }
+  &_primary {
+    width: 120px;
+    height: 40px;
+    background: #f96900;
+    color: #fff;
+  }
+  &_primary:hover {
+    background: #ed5d08;
+  }
+
+  &_secondary {
+    width: 120px;
+    height: 40px;
+    background: #fff0e6;
+    color: #d15700;
+  }
+  &_secondary:hover {
+    background: #ffd0b2;
+    color: #d55406;
+  }
+
+  &_light {
+    width: 70px;
+    height: 32px;
+    background: #f3f3f7;
+    color: #5c6370;
+    font-size: 14px;
+  }
+  &_light:hover {
+    color: #000;
+  }
+}
+
+@media screen and (max-width: 431px) {
+  .button {
+    &_primary,
+    &_secondary {
+      width: 104px;
+    }
+  }
+}
