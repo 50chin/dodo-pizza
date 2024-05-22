@@ -3,12 +3,8 @@ import { Container } from '../Container';
 import { InfoLists } from '../../components/InfoLists';
 import appleImg from '../../assets/icon/apple.svg';
 import googleImg from '../../assets/icon/google.svg';
-import footLogo from '../../assets/icon/footLogo.svg';
-import fbImg from '../../assets/icon/fb.svg';
-import instImg from '../../assets/icon/inst.svg';
-import odnoImg from '../../assets/icon/odno.svg';
-import vkImg from '../../assets/icon/vk.svg';
-import youtImg from '../../assets/icon/yout.svg';
+import { FooterBottom } from '../../components/FooterBottom/FooterBottom';
+import { FooterCall } from '../../components/FooterCall/FooterCall';
 
 const footerLists = [
   {
@@ -49,10 +45,7 @@ export const Footer = () => {
               </a>
             </div>
             <div className={s.footer__contact}>
-              <a className={s.footer__tel} href="tel:8-800-302-00-60">
-                8-800-302-00-60
-              </a>
-              <p>Звонок бесплатный</p>
+              <FooterCall />
               <a
                 className={s.footer__mail}
                 href="mailto:feedback@dodopizza.com"
@@ -76,52 +69,7 @@ export const Footer = () => {
             </p>
           </div>
         </div>
-        <div className={s.footer__bottom}>
-          <div className={s.footer__logo}>
-            <img src={footLogo} alt="logo" />
-            <span className={s.footer__copy}>© 2021</span>
-          </div>
-          <div className={s.footer__legalInfo}>
-            <a className={s.footer__copy} href="#">
-              Правовая информация
-            </a>
-            <a className={s.footer__copy} href="#">
-              Калорийность и состав
-            </a>
-            <a className={s.footer__copy} href="#">
-              Помощь
-            </a>
-          </div>
-          <div className={s.footer__social}>
-            <ul className={s.footer__lists}>
-              <li className={s.footer__list}>
-                <a href="#">
-                  <img src={fbImg} alt="facebook" />
-                </a>
-              </li>
-              <li className={s.footer__list}>
-                <a href="#">
-                  <img src={instImg} alt="instagram" />
-                </a>
-              </li>
-              <li className={s.footer__list}>
-                <a href="#">
-                  <img src={odnoImg} alt="OK" />
-                </a>
-              </li>
-              <li className={s.footer__list}>
-                <a href="#">
-                  <img src={vkImg} alt="vk" />
-                </a>
-              </li>
-              <li className={s.footer__list}>
-                <a href="#">
-                  <img src={youtImg} alt="youtube" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <FooterBottom />
       </Container>
     </footer>
   );
