@@ -1,7 +1,7 @@
-import { Container } from "../Container";
-import s from "./Combo.module.scss";
-import { Card } from "../../components/Card/Card";
-import { data } from "../../../data";
+import { Container } from '../Container';
+import s from './Combo.module.scss';
+import { Card } from '../../components/Card/Card';
+import { data } from '../../../public/data';
 
 export const Combo = () => {
   return (

@@ -1,27 +1,30 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const WidthProviders = createContext();
+const WindowWidthContext = createContext();
 
 export const useWindowWidth = () => {
-  return useContext(WidthProviders);
+  return useContext(WindowWidthContext);
 };
 
 export const WindowWidthProvider = ({ children }) => {
   const [width, setWidth] = useState(window.innerWidth);
 
-  const updateWidth = () => {
-    setWidth(window.innerWidth);
-  };
-
   useEffect(() => {
+    const updateWidth = () => {
+      setWidth(window.innerWidth);
+    };
+
     window.addEventListener('resize', updateWidth);
 
+    // Убирает обработчик во время размонтирования компонента
     return () => {
       window.removeEventListener('resize', updateWidth);
     };
   }, []);
 
   return (
-    <WidthProviders.Provider value={width}>{children}</WidthProviders.Provider>
+    <WindowWidthContext.Provider value={width}>
+      {children}
+    </WindowWidthContext.Provider>
   );
 };

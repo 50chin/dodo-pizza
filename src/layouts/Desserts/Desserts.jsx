@@ -1,7 +1,7 @@
-import s from "./Desserts.module.scss";
-import { Container } from "../Container";
-import { Card } from "../../components/Card/Card";
-import { data } from "../../../data";
+import s from './Desserts.module.scss';
+import { Container } from '../Container';
+import { Card } from '../../components/Card/Card';
+import { data } from '../../../public/data';
 
 export const Desserts = () => {
   return (

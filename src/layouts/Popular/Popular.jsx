@@ -1,6 +1,6 @@
-import { data } from "../../../data";
-import { Container } from "../../layouts/Container";
-import s from "./Popular.module.scss";
+import { data } from '../../../public/data';
+import { Container } from '../../layouts/Container';
+import s from './Popular.module.scss';
 
 export const Popular = () => {
   return (

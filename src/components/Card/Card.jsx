@@ -5,7 +5,7 @@ import { Portal } from '../../components/Portal/Portal';
 import { Modal } from '../../components/Modal/Modal';
 import { useState } from 'react';
 
-export const Card = ({ img, name, desc, price, btn, type }) => {
+export const Card = ({ img, name, desc, price, btn, type, item }) => {
   const width = useWindowWidth();
   const [state, setState] = useState(false);
   const onClose = () => {
@@ -46,6 +46,7 @@ export const Card = ({ img, name, desc, price, btn, type }) => {
       {state && (
         <Portal>
           <Modal
+            item={item}
             type={type}
             btn={btn}
             onClose={onClose}
