@@ -1,4 +1,4 @@
-import s from './InfoLists.module.scss';
+import s from "./InfoLists.module.scss";
 
 export const InfoLists = ({ name, list }) => {
   return (
