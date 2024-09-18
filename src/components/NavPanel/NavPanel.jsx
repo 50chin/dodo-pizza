@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import s from "./NavPanel.module.scss";
-import { useWindowWidth } from "../../app/providers/WidthProviders";
+import { useEffect, useState } from 'react';
+import s from './NavPanel.module.scss';
+import { useWindowWidth } from '../../app/providers/WidthProviders';
 
 export const NavPanel = () => {
   const width = useWindowWidth();
@@ -8,7 +8,7 @@ export const NavPanel = () => {
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
-    const nav = document.getElementById("nav");
+    const nav = document.getElementById('nav');
     const handleScroll = () => {
       if (window.scrollY > nav.offsetTop) {
         setIsFixed(true);
@@ -17,10 +17,10 @@ export const NavPanel = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   return (
@@ -31,11 +31,11 @@ export const NavPanel = () => {
         style={
           isFixed && width < 431
             ? {
-                position: "fixed",
-                top: "0",
-                background: "#FFF",
-                boxShadow: "0px 5px 25px 0px rgba(115, 121, 140, 0.10)",
-                padding: "13px 0",
+                position: 'fixed',
+                top: '0',
+                background: '#FFF',
+                boxShadow: '0px 5px 25px 0px rgba(115, 121, 140, 0.10)',
+                padding: '13px 0',
               }
             : {}
         }

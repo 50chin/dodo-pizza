@@ -1,66 +1,14 @@
 import { Button } from '../../ui/Button/Button';
 import s from './Modal.module.scss';
 import { useEffect } from 'react';
-import img1 from '../../assets/img/modalIngredients/bort.png';
-import img2 from '../../assets/img/modalIngredients/mushrooms.png';
-import img3 from '../../assets/img/modalIngredients/chicken.png';
-import img4 from '../../assets/img/modalIngredients/cheese.png';
-import img5 from '../../assets/img/modalIngredients/pepper.png';
-import img6 from '../../assets/img/modalIngredients/6.png';
-import img7 from '../../assets/img/modalIngredients/mozzarella.png';
-import img8 from '../../assets/img/modalIngredients/cheddar.png';
-import img9 from '../../assets/img/modalIngredients/cucumbers.png';
 import closeImg from '../../assets/icon/close.svg';
 import { CardIngredients } from '../CardIngredients/CardIngredients';
-const ingredients = [
-  {
-    img: img1,
-    title: 'Сырный бортик',
-    price: '199',
-  },
-  {
-    img: img2,
-    title: 'Шампиньоны',
-    price: '39',
-  },
-  {
-    img: img3,
-    title: 'Цыпленок',
-    price: '59',
-  },
-  {
-    img: img4,
-    title: 'Кубики брынзы',
-    price: '79',
-  },
-  {
-    img: img5,
-    title: 'Острый перец халапеньо',
-    price: '59',
-  },
-  {
-    img: img6,
-    title: 'Нежный цыпленок',
-    price: '99',
-  },
-  {
-    img: img7,
-    title: 'Сливочная моцарелла',
-    price: '79',
-  },
-  {
-    img: img8,
-    title: 'Сыры чеддер и пармезан',
-    price: '79',
-  },
-  {
-    img: img9,
-    title: 'Маринованные огурчики',
-    price: '59',
-  },
-];
+import { ingredients } from '../../../public/ingredients';
+import { useCart } from '../../app/providers/CartContext';
 
-export const Modal = ({ onClose, name, img, desc, price, type }) => {
+export const Modal = ({ onClose, name, img, desc, price, type, item }) => {
+  const { addToCart } = useCart();
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -107,7 +55,7 @@ export const Modal = ({ onClose, name, img, desc, price, type }) => {
                 })}
               </section>
               <div className={s.modal__addBtn}>
-                <Button variant="bigPrimary">
+                <Button variant="bigPrimary" onClick={() => addToCart(item)}>
                   Добавить в корзину за {price.replace('от', '')}
                 </Button>
               </div>
