@@ -41,21 +41,8 @@ h2 {
   font-weight: 700;
 }
 
-.wrapper {
-  margin-top: 40px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(4, auto);
-}
-
 @media screen and (max-width: 431px) {
   .container {
     max-width: 318px;
-  }
-
-  .wrapper {
-    gap: 0;
-    display: flex;
-    flex-wrap: wrap;
   }
 }

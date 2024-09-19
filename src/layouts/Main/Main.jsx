@@ -1,21 +1,24 @@
-import { Popular } from "../Popular/Popular";
-import { Slider } from "../../components/Slider/Slider";
-import { Pizza } from "../Pizza/Pizza";
-import { Combo } from "../Combo/Combo";
-import { Snacks } from "../Snacks/Snacks";
-import { Desserts } from "../Desserts/Desserts";
-import { Drinks } from "../Drinks/Drinks";
+import { Popular } from '../Popular/Popular';
+import { Slider } from '../../components/Slider/Slider';
+import { data } from '../../../public/data';
+import { Section } from '../../components/Section/Section';
+
+const products = ['pizza', 'combo', 'snacks', 'deserts', 'drinks'];
+const titleSections = ['Пицца', 'Комбо', 'Закуски', 'Десерты', 'Напитки'];
 
 export const Main = () => {
   return (
     <>
       <Slider />
       <Popular />
-      <Pizza />
-      <Combo />
-      <Snacks />
-      <Desserts />
-      <Drinks />
+      {products.map((products, i) => (
+        <Section
+          key={products}
+          id={products}
+          data={data[products]}
+          title={titleSections[i]}
+        />
+      ))}
     </>
   );
 };

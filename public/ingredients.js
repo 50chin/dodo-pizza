@@ -1,56 +1,46 @@
-import img1 from '../src/assets/img/modalIngredients/bort.png';
-import img2 from '../src/assets/img/modalIngredients/mushrooms.png';
-import img3 from '../src/assets/img/modalIngredients/chicken.png';
-import img4 from '../src/assets/img/modalIngredients/cheese.png';
-import img5 from '../src/assets/img/modalIngredients/pepper.png';
-import img6 from '../src/assets/img/modalIngredients/6.png';
-import img7 from '../src/assets/img/modalIngredients/mozzarella.png';
-import img8 from '../src/assets/img/modalIngredients/cheddar.png';
-import img9 from '../src/assets/img/modalIngredients/cucumbers.png';
-
 export const ingredients = [
   {
-    img: img1,
+    img: 'public/img/modalIngredients/bort.png',
     title: 'Сырный бортик',
     price: '199',
   },
   {
-    img: img2,
+    img: 'public/img/modalIngredients/mushrooms.png',
     title: 'Шампиньоны',
     price: '39',
   },
   {
-    img: img3,
+    img: 'public/img/modalIngredients/chicken.png',
     title: 'Цыпленок',
     price: '59',
   },
   {
-    img: img4,
+    img: 'public/img/modalIngredients/cheese.png',
     title: 'Кубики брынзы',
     price: '79',
   },
   {
-    img: img5,
+    img: 'public/img/modalIngredients/pepper.png',
     title: 'Острый перец халапеньо',
     price: '59',
   },
   {
-    img: img6,
+    img: 'public/img/modalIngredients/6.png',
     title: 'Нежный цыпленок',
     price: '99',
   },
   {
-    img: img7,
+    img: 'public/img/modalIngredients/mozzarella.png',
     title: 'Сливочная моцарелла',
     price: '79',
   },
   {
-    img: img8,
+    img: 'public/img/modalIngredients/cheddar.png',
     title: 'Сыры чеддер и пармезан',
     price: '79',
   },
   {
-    img: img9,
+    img: 'public/img/modalIngredients/cucumbers.png',
     title: 'Маринованные огурчики',
     price: '59',
   },

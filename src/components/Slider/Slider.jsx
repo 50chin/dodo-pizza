@@ -1,9 +1,9 @@
 import s from './Slider.module.scss';
-import slide1 from '../../assets/img/slide/1.webp';
-import slide2 from '../../assets/img/slide/2.webp';
-import slide3 from '../../assets/img/slide/3.webp';
-import mobSlide1 from '../../assets/img/slide/m1.webp';
-import mobSlide2 from '../../assets/img/slide/m2.webp';
+import slide1 from '../../assets/slide/1.webp';
+import slide2 from '../../assets/slide/2.webp';
+import slide3 from '../../assets/slide/3.webp';
+import mobSlide1 from '../../assets/slide/m1.webp';
+import mobSlide2 from '../../assets/slide/m2.webp';
 import { Container } from '../../layouts/Container';
 import { useEffect, useState } from 'react';
 import { useWindowWidth } from '../../app/providers/WidthProviders';

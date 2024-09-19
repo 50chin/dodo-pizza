@@ -8,17 +8,15 @@ export const Popular = () => {
       <Container>
         <h2>Новое и популярное</h2>
         <div className={s.popular__wrapper}>
-          {data.popular.map((el) => {
-            return (
-              <div key={el.id} className={s.popular__card}>
-                <img src={el.img} alt="pizza" />
-                <div>
-                  <p className={s.popular__name}>{el.name}</p>
-                  <p className={s.popular__price}>{el.price} ₽</p>
-                </div>
+          {data.popular.map((el) => (
+            <div key={el.id} className={s.popular__card}>
+              <img src={el.img} alt="pizza" />
+              <div>
+                <p className={s.popular__name}>{el.name}</p>
+                <p className={s.popular__price}>{el.price} ₽</p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </Container>
     </section>
