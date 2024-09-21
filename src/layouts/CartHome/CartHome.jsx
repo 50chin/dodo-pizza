@@ -8,7 +8,7 @@ import { Container } from '../Container';
 import s from './CartHome.module.scss';
 
 export const CartHome = () => {
-  const { cart, deleteFromCart } = useCart();
+  const { cart, deleteFromCart, addToCart } = useCart();
   const [count, setCount] = useState(1);
   const sum = cart.reduce((acc, el) => acc + count * el.price, 0);
 
@@ -36,8 +36,12 @@ export const CartHome = () => {
           </div>
           <p className={s.cart__text}>Добавить к заказу?</p>
           <div className={s.cart__panel}>
-            {addToOrder.map((el, i) => (
-              <CardAddToCard key={i} el={el} />
+            {addToOrder.map((el) => (
+              <CardAddToCard
+                key={el.id}
+                el={el}
+                onClick={() => addToCart(el)}
+              />
             ))}
           </div>
           <p className={s.cart__sum}>

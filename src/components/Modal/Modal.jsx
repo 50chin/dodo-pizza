@@ -1,6 +1,6 @@
 import { Button } from '../../ui/Button/Button';
 import s from './Modal.module.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import closeImg from '../../assets/icon/close.svg';
 import { CardIngredients } from '../CardIngredients/CardIngredients';
 import { ingredients } from '../../../public/ingredients';
@@ -8,6 +8,11 @@ import { useCart } from '../../app/providers/CartContext';
 
 export const Modal = ({ onClose, name, img, desc, price, category, item }) => {
   const { addToCart } = useCart();
+  const [sum, setSum] = useState(0);
+
+  const handleAddIngredients = (price) => {
+    setSum((prevState) => prevState + price);
+  };
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -54,6 +59,7 @@ export const Modal = ({ onClose, name, img, desc, price, category, item }) => {
                         img={el.img}
                         title={el.title}
                         price={el.price}
+                        handleAddIngredients={handleAddIngredients}
                       />
                     );
                   })}
@@ -64,9 +70,9 @@ export const Modal = ({ onClose, name, img, desc, price, category, item }) => {
                     onClick={() => {
                       addToCart(item);
                       onClose();
-                    } }
+                    }}
                   >
-                    Добавить в корзину за {price} ₽
+                    Добавить в корзину за {price + sum} ₽
                   </Button>
                 </div>
               </div>
@@ -126,7 +132,6 @@ export const Modal = ({ onClose, name, img, desc, price, category, item }) => {
       //     </div>
       //   )}
 // </div> */}
-      }
     </>
   );
 };
