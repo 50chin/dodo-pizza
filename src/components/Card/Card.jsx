@@ -4,10 +4,14 @@ import { useWindowWidth } from '../../app/providers/WidthProviders';
 import { Portal } from '../../components/Portal/Portal';
 import { Modal } from '../../components/Modal/Modal';
 import { useState } from 'react';
+import { useCart } from '../../app/providers/CartContext';
 
 export const Card = ({ img, name, desc, price, btn, category, item }) => {
   const width = useWindowWidth();
+  const { addToCart } = useCart();
+
   const [state, setState] = useState(false);
+
   const onClose = () => {
     setState(false);
   };
@@ -16,9 +20,7 @@ export const Card = ({ img, name, desc, price, btn, category, item }) => {
     <>
       <article
         className={s.card}
-        onClick={() => {
-          setState(true);
-        }}
+        onClick={item.btn === 'Выбрать' ? () => setState(true) : null}
       >
         <img src={img} alt="pizza" />
         <div className={s.card__wrapper}>
@@ -27,9 +29,17 @@ export const Card = ({ img, name, desc, price, btn, category, item }) => {
             <p className={s.card__desc}>{desc}</p>
           </div>
           <div className={s.card__bottom}>
-            <p className={s.card__price}>{price}</p>
+            <p className={s.card__price}>
+              {item.category === 'pizza' ? 'от ' : ''} {price} ₽
+            </p>
             <Button
-              onClick={() => setState(true)}
+              onClick={
+                item.btn === 'В корзину'
+                  ? () => addToCart(item)
+                  : item.btn === 'Выбрать'
+                  ? () => setState(true)
+                  : null
+              }
               type="button"
               variant={btn === 'Собрать' ? 'primary' : 'secondary'}
             >

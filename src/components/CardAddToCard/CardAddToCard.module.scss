@@ -1,0 +1,38 @@
+.card {
+  width: 250px;
+  height: 104px;
+  padding: 14px 38px 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #e1e1e8;
+  background: #fff;
+
+  &__wrapper {
+    display: flex;
+    gap: 22px;
+  }
+
+  &__img {
+    width: 76px;
+    height: 76px;
+  }
+
+  &__name {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__price {
+    margin-top: 8px;
+    width: 96px;
+    height: 32px;
+    color: var(--Orange-dark, #d15700);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 1000px;
+    background: #fff0e6;
+  }
+
+  
+}

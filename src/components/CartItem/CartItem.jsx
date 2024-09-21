@@ -2,8 +2,15 @@ import s from './CartItem.module.scss';
 import deleteIcon from '../../assets/icon/delete.svg';
 import decrIcon from '../../assets/icon/decrement.svg';
 import incrIcon from '../../assets/icon/increment.svg';
+import { useEffect } from 'react';
 
-export const CartItem = ({ el }) => {
+export const CartItem = ({
+  el,
+  count,
+  decrementCount,
+  incrementCount,
+  deleteFromCart,
+}) => {
   return (
     <article className={s.item}>
       <div className={s.item__left}>
@@ -15,16 +22,19 @@ export const CartItem = ({ el }) => {
       </div>
       <div className={s.item__right}>
         <div className={s.item__btnCount}>
-          <button className={s.item__decr}>
+          <button className={s.item__decr} onClick={() => decrementCount()}>
             <img src={decrIcon} alt="" />
           </button>
-          <p className={s.item__counter}>1</p>
-          <button>
+          <p className={s.item__counter}>{count}</p>
+          <button onClick={() => incrementCount()}>
             <img src={incrIcon} alt="" />
           </button>
         </div>
-        <p className={s.item__price}> 600 ₽</p>
-        <button className={s.item__btnDelete}>
+        <p className={s.item__price}> {el.price} ₽</p>
+        <button
+          className={s.item__btnDelete}
+          onClick={() => deleteFromCart(el)}
+        >
           <img src={deleteIcon} alt="icon" />
         </button>
       </div>

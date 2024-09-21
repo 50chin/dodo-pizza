@@ -3,10 +3,50 @@
 
   &__wrapper {
     max-width: 700px;
+    overflow: hidden;
     margin: 0 auto;
   }
 
-  &__items {
+  &__section {
     padding: 30px 0 60px;
+    overflow: hidden;
+  }
+
+  &__items {
+    overflow: scroll;
+    height: 300px;
+  }
+
+  &__text {
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__panel {
+    margin-top: 20px;
+    overflow: scroll;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__sum {
+    margin-top: 65px;
+    color: #000;
+    font-size: 21px;
+    font-weight: 600;
+    text-align: right;
+
+    span {
+      color: #f96900;
+      font-size: 26px;
+      font-weight: 600;
+    }
+  }
+
+  &__btns {
+    margin-top: 27px;
+    display: flex;
+    justify-content: space-between;
   }
 }
