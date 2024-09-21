@@ -1,6 +1,9 @@
 .footer {
   background: #464c55;
-  padding: 50px 0 40px;
+
+  &__wrapper {
+    padding: 50px 0 40px;
+  }
 
   &__top {
     display: flex;
@@ -19,7 +22,6 @@
   &__copy {
     color: #fff;
     font-size: 16px;
-    font-weight: 400;
     line-height: 22px;
     opacity: 0.7;
   }
@@ -48,13 +50,6 @@
     line-height: 26px;
   }
 
-  &__mail {
-    color: #fff;
-    font-size: 15px;
-    font-weight: 400;
-    opacity: 0.9;
-  }
-
   &__topRight {
     p {
       margin-top: 6px;
@@ -63,7 +58,6 @@
       opacity: 0.5;
       text-align: right;
       font-size: 15px;
-      font-weight: 400;
     }
     img {
       width: 135px;
@@ -78,7 +72,6 @@
     display: flex;
     justify-content: space-between;
     gap: 156px;
-    padding-bottom: 40px;
   }
 }
 

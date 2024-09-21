@@ -1,0 +1,12 @@
+.cart {
+  padding: 70px 0;
+
+  &__wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__items {
+    padding: 30px 0 60px;
+  }
+}

@@ -15,7 +15,7 @@ export const Main = () => {
         <Section
           key={products}
           id={products}
-          data={data[products]}
+          data={data.filter((el) => el.category === products)}
           title={titleSections[i]}
         />
       ))}

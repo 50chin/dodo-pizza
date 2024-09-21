@@ -1,10 +1,14 @@
 .footer {
   &__bottom {
+    padding: 46px 0 40px;
+    background-color: #464c55;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 40px;
     flex-wrap: wrap;
   }
 

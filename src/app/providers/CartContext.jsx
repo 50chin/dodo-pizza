@@ -12,10 +12,10 @@ export const CartProvider = ({ children }) => {
 
   // Добавление методов для управления состоянием корзины
   const addToCart = (item) => {
-    setCart((prevCart) => [...prevCart, item]);
+    if (!cart.some((el) => el.id === item.id)) {
+      setCart([...cart, item]);
+    }
   };
-
-
 
   return (
     <CartContext.Provider value={{ cart, addToCart }}>

@@ -1,1 +1,0 @@
-export {FooterBottom} from './FooterBottom'

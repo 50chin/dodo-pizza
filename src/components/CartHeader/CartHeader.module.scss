@@ -1,5 +1,10 @@
 .cart {
-  &__top {
+  &__header {
+    padding: 28px 0 40px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  &__wrapper {
     display: flex;
     justify-content: space-between;
   }

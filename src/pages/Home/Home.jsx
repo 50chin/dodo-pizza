@@ -1,7 +1,7 @@
-import { Footer } from "../../layouts/Footer/Footer";
-import { Header } from "../../layouts/Header";
-import { Main } from "../../layouts/Main/Main";
-import s from "./Home.module.scss";
+import { Footer } from '../../layouts/Footer/Footer';
+import { Header } from '../../layouts/Header/Header';
+import { Main } from '../../layouts/Main/Main';
+import s from './Home.module.scss';
 
 export const Home = () => {
   return (

@@ -3,7 +3,6 @@ import { Card } from '../Card/Card';
 import s from './Section.module.scss';
 
 export const Section = ({ title, data, id }) => {
-  console.log(data);
   return (
     <section className={s.products} id={id}>
       <Container>
@@ -12,6 +11,8 @@ export const Section = ({ title, data, id }) => {
           {data.map((el) => (
             <Card
               key={el.id}
+              item={el}
+              category={el.category}
               img={el.img}
               name={el.name}
               desc={el.desc}

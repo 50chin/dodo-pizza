@@ -6,7 +6,7 @@ import { CardIngredients } from '../CardIngredients/CardIngredients';
 import { ingredients } from '../../../public/ingredients';
 import { useCart } from '../../app/providers/CartContext';
 
-export const Modal = ({ onClose, name, img, desc, price, type, item }) => {
+export const Modal = ({ onClose, name, img, desc, price, category, item }) => {
   const { addToCart } = useCart();
 
   useEffect(() => {
@@ -16,10 +16,11 @@ export const Modal = ({ onClose, name, img, desc, price, type, item }) => {
       document.body.style.overflow = 'auto';
     };
   }, []);
+
   return (
     <>
       <div className={s.modal} onClick={() => onClose()}>
-        {type === 'pizza' ? (
+        {category === 'pizza' ? (
           <div
             className={s.modal__wrapper}
             onClick={(evt) => evt.stopPropagation()}
@@ -96,7 +97,7 @@ export const Modal = ({ onClose, name, img, desc, price, type, item }) => {
                 <p>? гр.</p>
                 <p className={s.modal__desc}>{desc}</p>
               </div>
-              <Button variant="bigPrimary">
+              <Button variant="bigPrimary" onClick={() => addToCart(item)}>
                 Добавить в корзину за {price.replace('от', '')}
               </Button>
             </div>

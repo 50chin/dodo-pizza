@@ -1,0 +1,20 @@
+.call {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  &__tel {
+    text-align: right;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+
+  &__text {
+    color: #fff;
+    text-align: right;
+    font-size: 15px;
+    opacity: 0.5;
+  }
+}
