@@ -5,6 +5,7 @@ export const data = [
     name: 'Цезарь',
     price: 445,
     category: 'popular',
+    quantity: 1,
   },
   {
     id: '111e1bca-f2f2-4dc1-bf66-71aa3ce299af',
@@ -12,6 +13,7 @@ export const data = [
     name: 'Нежный лосось',
     price: 495,
     category: 'popular',
+    quantity: 1,
   },
   {
     id: '5b60d3e6-52f3-499f-bac4-0f61ba31dace',
@@ -19,6 +21,7 @@ export const data = [
     name: '2 пиццы',
     price: 899,
     category: 'popular',
+    quantity: 1,
   },
   {
     id: '0d99b0dc-fb37-43e1-88ee-aa5dabb01bbb',
@@ -26,6 +29,7 @@ export const data = [
     name: 'Карбонара',
     price: 395,
     category: 'popular',
+    quantity: 1,
   },
   {
     id: '273c658f-eba2-475c-a819-d2dfc1d9fe63',
@@ -35,6 +39,8 @@ export const data = [
     price: 600,
     btn: 'Собрать',
     category: 'pizza',
+    addToPizza: [],
+    quantity: 1,
   },
   {
     id: 'de377636-6684-434a-8933-d7306fb08090',
@@ -44,6 +50,8 @@ export const data = [
     price: 625,
     btn: 'Выбрать',
     category: 'pizza',
+    addToPizza: [],
+    quantity: 1,
   },
   {
     id: 'f2724af1-b1ff-4004-90e5-ea0d05b1d17c',
@@ -53,6 +61,8 @@ export const data = [
     price: 625,
     btn: 'Выбрать',
     category: 'pizza',
+    addToPizza: [],
+    quantity: 1,
   },
   {
     id: 'aa3df0e7-6e09-4173-b83f-51dde96b004e',
@@ -62,6 +72,8 @@ export const data = [
     price: 625,
     btn: 'Выбрать',
     category: 'pizza',
+    addToPizza: [],
+    quantity: 1,
   },
   {
     id: '19f3400e-b2c7-48e6-99fb-7a4845437352',
@@ -71,6 +83,8 @@ export const data = [
     price: 455,
     btn: 'Выбрать',
     category: 'pizza',
+    addToPizza: [],
+    quantity: 1,
   },
   {
     id: '0b812881-bb0e-4592-955b-1ec2bad911f6',
@@ -80,6 +94,8 @@ export const data = [
     price: 495,
     btn: 'Выбрать',
     category: 'pizza',
+    addToPizza: [],
+    quantity: 1,
   },
   {
     id: '1a5028c5-661c-41e7-bd92-6a7c8f3d7f8c',
@@ -89,6 +105,8 @@ export const data = [
     price: 245,
     btn: 'Выбрать',
     category: 'pizza',
+    addToPizza: [],
+    quantity: 1,
   },
   {
     id: '6a957197-6a89-45c5-bd11-a49ba065efbe',
@@ -98,6 +116,8 @@ export const data = [
     price: 245,
     btn: 'Выбрать',
     category: 'pizza',
+    addToPizza: [],
+    quantity: 1,
   },
   {
     id: '65a2d43d-4016-4e0a-9233-ad215b1a7f98',
@@ -107,6 +127,7 @@ export const data = [
     price: 599,
     btn: 'Выбрать',
     category: 'combo',
+    quantity: 1,
   },
   {
     id: '76e0ac44-a1d2-4539-8b17-0b06b8208ad5',
@@ -116,6 +137,7 @@ export const data = [
     price: 899,
     btn: 'Выбрать',
     category: 'combo',
+    quantity: 1,
   },
   {
     id: '898b0a8e-eba8-4501-b259-4afaaca66338',
@@ -125,6 +147,7 @@ export const data = [
     price: 799,
     btn: 'Выбрать',
     category: 'combo',
+    quantity: 1,
   },
   {
     id: 'a0dded76-228c-4e37-9996-12bef9317ae3',
@@ -134,6 +157,7 @@ export const data = [
     price: 799,
     btn: 'Выбрать',
     category: 'combo',
+    quantity: 1,
   },
   {
     id: '73716510-001f-431b-b7dd-3de24c6a5ef0',
@@ -143,6 +167,7 @@ export const data = [
     price: 999,
     btn: 'Выбрать',
     category: 'combo',
+    quantity: 1,
   },
   {
     id: '959a47bc-04d0-4582-9091-f0151fecdb7b',
@@ -152,6 +177,7 @@ export const data = [
     price: 99,
     btn: 'В корзину',
     category: 'snacks',
+    quantity: 1,
   },
   {
     id: 'b03c7d4e-e141-46ca-b651-a40af28a86c6',
@@ -161,6 +187,7 @@ export const data = [
     price: 149,
     btn: 'В корзину',
     category: 'snacks',
+    quantity: 1,
   },
   {
     id: 'a1f8e62c-cb24-4d73-b73d-a916b322771d',
@@ -170,6 +197,7 @@ export const data = [
     price: 159,
     btn: 'В корзину',
     category: 'snacks',
+    quantity: 1,
   },
   {
     id: '0c2b2c85-5401-4818-a87b-94e76d37e842',
@@ -179,6 +207,7 @@ export const data = [
     price: 159,
     btn: 'В корзину',
     category: 'snacks',
+    quantity: 1,
   },
   {
     id: '8e625202-7aab-489c-ba73-22f67117e4f0',
@@ -188,6 +217,7 @@ export const data = [
     price: 159,
     btn: 'В корзину',
     category: 'snacks',
+    quantity: 1,
   },
   {
     id: '0d6208aa-4972-451d-84ce-43d7fe50d3c0',
@@ -197,6 +227,7 @@ export const data = [
     price: 99,
     btn: 'В корзину',
     category: 'deserts',
+    quantity: 1,
   },
   {
     id: '5a21b76a-d139-4703-8c91-305949233bb6',
@@ -206,6 +237,7 @@ export const data = [
     price: 149,
     btn: 'В корзину',
     category: 'deserts',
+    quantity: 1,
   },
   {
     id: '6b9bd291-69a9-4ab5-89fc-43bb5efa11eb',
@@ -215,6 +247,7 @@ export const data = [
     price: 159,
     btn: 'В корзину',
     category: 'deserts',
+    quantity: 1,
   },
   {
     id: '1375b9c9-d90a-4a57-b9cd-165e7c3a6ca2',
@@ -224,6 +257,7 @@ export const data = [
     price: 159,
     btn: 'В корзину',
     category: 'deserts',
+    quantity: 1,
   },
   {
     id: 'c2d48d19-052f-4601-a991-b9eedd466cc2',
@@ -233,6 +267,7 @@ export const data = [
     price: 159,
     btn: 'В корзину',
     category: 'deserts',
+    quantity: 1,
   },
   {
     id: 'e892d5ab-8599-41c8-86cd-5ba7dcc1a3c9',
@@ -242,6 +277,7 @@ export const data = [
     price: 99,
     btn: 'В корзину',
     category: 'drinks',
+    quantity: 1,
   },
   {
     id: '85d1a802-2ce6-48a3-bd72-15aa91819821',
@@ -251,6 +287,7 @@ export const data = [
     price: 149,
     btn: 'В корзину',
     category: 'drinks',
+    quantity: 1,
   },
   {
     id: '1e5d1c89-0f3d-44c7-bb6f-0889c69e52ca',
@@ -260,6 +297,7 @@ export const data = [
     price: 149,
     btn: 'В корзину',
     category: 'drinks',
+    quantity: 1,
   },
   {
     id: 'c0f43186-089b-4ef2-98df-4d5f8da3bf3f',
@@ -269,6 +307,7 @@ export const data = [
     price: 149,
     btn: 'В корзину',
     category: 'drinks',
+    quantity: 1,
   },
   {
     id: '3305909e-7a7b-4a39-a6a6-1c8ff843867c',
@@ -278,5 +317,6 @@ export const data = [
     price: 149,
     btn: 'В корзину',
     category: 'drinks',
+    quantity: 1,
   },
 ];

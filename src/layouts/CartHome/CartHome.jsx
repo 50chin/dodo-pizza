@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { addToOrder } from '../../../public/addToOrder';
 import { useCart } from '../../app/providers/CartContext';
 import { CardAddToCard } from '../../components/CardAddToCard/CardAddToCard';
@@ -8,12 +8,26 @@ import { Container } from '../Container';
 import s from './CartHome.module.scss';
 
 export const CartHome = () => {
-  const { cart, deleteFromCart, addToCart } = useCart();
-  const [count, setCount] = useState(1);
-  const sum = cart.reduce((acc, el) => acc + count * el.price, 0);
+  const { cart, deleteFromCart, addToCart, incrementCount, decrementCount } =
+    useCart();
 
-  const incrementCount = () => setCount((prevState) => prevState + 1);
-  const decrementCount = () => setCount((prevState) => prevState - 1);
+  const [totalSum, setTotalSum] = useState(0);
+
+  // Переменна которая хранит значение общей суммы заказа
+  useEffect(() => {
+    const totalSum = cart.reduce((acc, el) => {
+      if (el.category === 'pizza' && el.addToPizza.length) {
+        const cartItemSum = el.addToPizza.reduce((itemAcc, item) => {
+          return itemAcc + item.price;
+        }, 0);
+        return acc + (cartItemSum + el.price * el.quantity);
+      } else {
+        return acc + el.price * el.quantity;
+      }
+    }, 0);
+
+    setTotalSum(totalSum);
+  }, [cart]);
 
   return (
     <div className={s.cart}>
@@ -26,7 +40,6 @@ export const CartHome = () => {
                 <CartItem
                   key={el.id}
                   el={el}
-                  count={count}
                   incrementCount={incrementCount}
                   decrementCount={decrementCount}
                   deleteFromCart={deleteFromCart}
@@ -45,7 +58,7 @@ export const CartHome = () => {
             ))}
           </div>
           <p className={s.cart__sum}>
-            Сумма заказа: <span> {sum} ₽</span>
+            Сумма заказа: <span> {totalSum} ₽</span>
           </p>
           <div className={s.cart__btns}>
             <Button variant="bigPrimary">Вернуться в меню</Button>

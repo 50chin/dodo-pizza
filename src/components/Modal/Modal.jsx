@@ -6,14 +6,14 @@ import { CardIngredients } from '../CardIngredients/CardIngredients';
 import { ingredients } from '../../../public/ingredients';
 import { useCart } from '../../app/providers/CartContext';
 
-export const Modal = ({ onClose, name, img, desc, price, category, item }) => {
-  const { addToCart } = useCart();
+export const Modal = ({ onClose, name, img, desc, price, item }) => {
+  const { addToCart, cart } = useCart();
   const [sum, setSum] = useState(0);
 
   const handleAddIngredients = (price) => {
     setSum((prevState) => prevState + price);
   };
-
+// При открытии модального окна , body - scroll, style = hidden
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -60,6 +60,7 @@ export const Modal = ({ onClose, name, img, desc, price, category, item }) => {
                         title={el.title}
                         price={el.price}
                         handleAddIngredients={handleAddIngredients}
+                        cart={cart}
                       />
                     );
                   })}
