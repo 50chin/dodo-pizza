@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { addToOrder } from '../../../public/addToOrder';
-import { useCart } from '../../app/providers/CartContext';
+import { CartContext } from '../../app/providers/CartContext';
 import { CardAddToCard } from '../../components/CardAddToCard/CardAddToCard';
 import { CartItem } from '../../components/CartItem/CartItem';
 import { Button } from '../../ui/Button/Button';
@@ -9,21 +9,13 @@ import s from './CartHome.module.scss';
 
 export const CartHome = () => {
   const { cart, deleteFromCart, addToCart, incrementCount, decrementCount } =
-    useCart();
+    useContext(CartContext);
 
   const [totalSum, setTotalSum] = useState(0);
-
   // Переменна которая хранит значение общей суммы заказа
   useEffect(() => {
     const totalSum = cart.reduce((acc, el) => {
-      if (el.category === 'pizza' && el.addToPizza.length) {
-        const cartItemSum = el.addToPizza.reduce((itemAcc, item) => {
-          return itemAcc + item.price;
-        }, 0);
-        return acc + (cartItemSum + el.price * el.quantity);
-      } else {
-        return acc + el.price * el.quantity;
-      }
+      return acc + el.price * el.quantity;
     }, 0);
 
     setTotalSum(totalSum);

@@ -1,16 +1,17 @@
 import s from './Header.module.scss';
 
 import mLogo from '../../assets/icon/mLogo.svg';
-import { useWindowWidth } from '../../app/providers/WidthProviders';
+import { WindowWidthContext } from '../../app/providers/WidthProviders';
 import { Link } from 'react-router-dom';
 import { Container } from '../Container';
 import { NavPanel } from '../../components/NavPanel/NavPanel';
 import { Button } from '../../ui/Button/Button';
 import { HeaderLogo } from '../../components/HeaderLogo/HeaderLogo';
 import { CallNumber } from '../../components/CallNumber/CallNumber';
+import { useContext } from 'react';
 
 export const Header = () => {
-  const width = useWindowWidth();
+  const width = useContext(WindowWidthContext);
   return (
     <header className={s.header}>
       <Container>
@@ -38,6 +39,7 @@ export const Header = () => {
             <div className={s.header__wrapper}>
               <img className={s.header__mLogo} src={mLogo} alt="logo" />
             </div>
+            {/* тут была ошибка  */}
           </>
         )}
       </Container>

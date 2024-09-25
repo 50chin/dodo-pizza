@@ -5,14 +5,14 @@ import slide3 from '../../assets/slide/3.webp';
 import mobSlide1 from '../../assets/slide/m1.webp';
 import mobSlide2 from '../../assets/slide/m2.webp';
 import { Container } from '../../layouts/Container';
-import { useEffect, useState } from 'react';
-import { useWindowWidth } from '../../app/providers/WidthProviders';
+import { useContext, useEffect, useState } from 'react';
+import { WindowWidthContext } from '../../app/providers/WidthProviders';
 
 const imgSlide = [slide1, slide2, slide3];
 const imgMobSlide = [mobSlide1, mobSlide2];
 
 export const Slider = () => {
-  const width = useWindowWidth();
+  const width = useContext(WindowWidthContext);
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {

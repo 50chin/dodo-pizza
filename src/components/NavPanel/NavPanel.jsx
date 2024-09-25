@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import s from './NavPanel.module.scss';
-import { useWindowWidth } from '../../app/providers/WidthProviders';
+import { WindowWidthContext } from '../../app/providers/WidthProviders';
 
 export const NavPanel = () => {
-  const width = useWindowWidth();
+  const width = useContext(WindowWidthContext);
 
   const [isFixed, setIsFixed] = useState(false);
 
@@ -29,7 +29,7 @@ export const NavPanel = () => {
         className={s.nav}
         id="nav"
         style={
-          isFixed && width < 431
+          isFixed && width <= 431
             ? {
                 position: 'fixed',
                 top: '0',

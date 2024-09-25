@@ -34,7 +34,11 @@
 
 @media screen and (max-width: 431px) {
   .popular {
-    display: none;
+    padding: 20px 0 30px;
+    overflow: hidden;
+    overflow-x: scroll;
+
+    
     &__wrapper {
       margin-top: 10px;
     }

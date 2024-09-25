@@ -1,14 +1,14 @@
 import s from './Card.module.scss';
 import { Button } from '../../ui/Button/Button';
-import { useWindowWidth } from '../../app/providers/WidthProviders';
+import { WindowWidthContext } from '../../app/providers/WidthProviders';
 import { Portal } from '../../components/Portal/Portal';
 import { Modal } from '../../components/Modal/Modal';
-import { useState } from 'react';
-import { useCart } from '../../app/providers/CartContext';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../app/providers/CartContext';
 
 export const Card = ({ img, name, desc, price, btn, category, item }) => {
-  const width = useWindowWidth();
-  const { addToCart } = useCart();
+  const width = useContext(WindowWidthContext);
+  const { addToCart } = useContext(CartContext);
 
   const [state, setState] = useState(false);
 

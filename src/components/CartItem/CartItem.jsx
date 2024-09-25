@@ -15,7 +15,18 @@ export const CartItem = ({
         <img className={s.item__img} src={el.img} alt="img" />
         <div className={s.item__text}>
           <p className={s.item__name}>{el.name}</p>
-          <p className={s.item__desc}>Средняя 30 см, традиционное тесто</p>
+          <p className={s.item__desc}>
+            {el.category === 'pizza'
+              ? 'Средняя 30 см, традиционное тесто'
+              : '1шт.'}
+          </p>
+          {el.category === 'pizza' ? (
+            <p className={s.item__ingredients}>
+              + {el.addToPizza.map((el) => el.title + ', ')}
+            </p>
+          ) : (
+            ''
+          )}
         </div>
       </div>
       <div className={s.item__right}>
