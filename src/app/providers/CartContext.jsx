@@ -63,6 +63,8 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+
+  
   // Функция по увеличению количество продуктов
   const incrementCount = (product) => {
     const updatedCart = cart.map((el) =>
