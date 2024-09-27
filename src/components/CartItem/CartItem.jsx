@@ -22,7 +22,9 @@ export const CartItem = ({
           </p>
           {el.category === 'pizza' ? (
             <p className={s.item__ingredients}>
-              + {el.addToPizza.map((el) => el.title + ', ')}
+              {el.addToPizza.length >= 1
+                ? `+  ${el.addToPizza.map((item) => item.title).join(', ')}`
+                : ''}
             </p>
           ) : (
             ''

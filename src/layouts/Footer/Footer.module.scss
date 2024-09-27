@@ -80,9 +80,13 @@
     &__topLeft {
       max-width: 240px;
     }
+    &__wrapper {
+      padding: 50px 0 0;
+      flex-direction: column-reverse;
+    }
+
     &__appStore {
       display: flex;
-      justify-content: space-between;
       padding: 20px 0;
     }
     &__topRight {

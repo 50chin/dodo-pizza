@@ -6,6 +6,8 @@ import { CartItem } from '../../components/CartItem/CartItem';
 import { Button } from '../../ui/Button/Button';
 import { Container } from '../Container';
 import s from './CartHome.module.scss';
+import { CartLayout } from '../CartLayout/CartLayout';
+import { Link } from 'react-router-dom';
 
 export const CartHome = () => {
   const { cart, deleteFromCart, addToCart, incrementCount, decrementCount } =
@@ -22,42 +24,50 @@ export const CartHome = () => {
   }, [cart]);
 
   return (
-    <div className={s.cart}>
-      <Container>
-        <div className={s.cart__wrapper}>
-          <h2 className={s.cart__title}>Корзина</h2>
-          <div className={s.cart__section}>
-            <div className={s.cart__items}>
-              {cart.map((el) => (
-                <CartItem
+    <CartLayout>
+      <div className={s.cart}>
+        <Container>
+          <div className={s.cart__wrapper}>
+            <h2 className={s.cart__title}>Корзина</h2>
+            <div className={s.cart__section}>
+              {cart.length != 0 ? (
+                <div className={s.cart__items}>
+                  {cart.map((el) => (
+                    <CartItem
+                      key={el.id}
+                      el={el}
+                      incrementCount={incrementCount}
+                      decrementCount={decrementCount}
+                      deleteFromCart={deleteFromCart}
+                    />
+                  ))}
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
+            <p className={s.cart__text}>Добавить к заказу?</p>
+            <div className={s.cart__panel}>
+              {addToOrder.map((el) => (
+                <CardAddToCard
                   key={el.id}
                   el={el}
-                  incrementCount={incrementCount}
-                  decrementCount={decrementCount}
-                  deleteFromCart={deleteFromCart}
+                  onClick={() => addToCart(el)}
                 />
               ))}
             </div>
+            <p className={s.cart__sum}>
+              Сумма заказа: <span> {totalSum} ₽</span>
+            </p>
+            <div className={s.cart__btns}>
+              <Link to={'/dodo-pizza/'}>
+                <Button variant="bigPrimary">Вернуться в меню</Button>
+              </Link>
+              <Button variant="bigPrimary">Оформить заказ </Button>
+            </div>
           </div>
-          <p className={s.cart__text}>Добавить к заказу?</p>
-          <div className={s.cart__panel}>
-            {addToOrder.map((el) => (
-              <CardAddToCard
-                key={el.id}
-                el={el}
-                onClick={() => addToCart(el)}
-              />
-            ))}
-          </div>
-          <p className={s.cart__sum}>
-            Сумма заказа: <span> {totalSum} ₽</span>
-          </p>
-          <div className={s.cart__btns}>
-            <Button variant="bigPrimary">Вернуться в меню</Button>
-            <Button variant="bigPrimary">Оформить заказ </Button>
-          </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </CartLayout>
   );
 };

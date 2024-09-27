@@ -20,9 +20,11 @@ export const Card = ({ img, name, desc, price, btn, category, item }) => {
     <>
       <article
         className={s.card}
-        onClick={item.btn === 'Выбрать' ? () => setState(true) : null}
+        onClick={(evt) => {
+          setState(true);
+        }}
       >
-        <img src={img} alt="pizza" />
+        <img src={img} alt="img" />
         <div className={s.card__wrapper}>
           <div className={s.card__text}>
             <h3 className={s.card__name}>{name}</h3>
@@ -35,10 +37,10 @@ export const Card = ({ img, name, desc, price, btn, category, item }) => {
             <Button
               onClick={
                 item.btn === 'В корзину'
-                  ? () => addToCart(item)
-                  : item.btn === 'Выбрать'
-                  ? () => setState(true)
-                  : null
+                  ? (evt) => {
+                      addToCart(item), evt.stopPropagation();
+                    }
+                  : () => setState(true)
               }
               type="button"
               variant={btn === 'Собрать' ? 'primary' : 'secondary'}
@@ -49,7 +51,9 @@ export const Card = ({ img, name, desc, price, btn, category, item }) => {
                   : btn === 'Выбрать'
                   ? 'Выбрать'
                   : 'В корзину'
-                : price}
+                : category === 'pizza'
+                ? `от ${price} ₽`
+                : `${price} ₽`}
             </Button>
           </div>
         </div>

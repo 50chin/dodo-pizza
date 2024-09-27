@@ -14,7 +14,7 @@
 
   &__items {
     overflow: scroll;
-    height: 300px;
+    max-height: 300px;
   }
 
   &__text {

@@ -27,7 +27,7 @@ export const CardIngredients = ({
     }
   };
 
-  // Функция для добавления ингредиентов в отдельный массив
+  // Функция для добавления ингредиентов в отдельный массив или удаления
   const handleAddToPizza = (title, price) => {
     if (!isSelected) {
       setAddIngredients((prevAddToPizza) => [

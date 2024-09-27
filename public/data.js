@@ -226,7 +226,7 @@ export const data = [
     desc: 'Десерт из песочного теста с яблочной начинкой. Может содержать изюм',
     price: 99,
     btn: 'В корзину',
-    category: 'deserts',
+    category: 'desserts',
     quantity: 1,
   },
   {
@@ -236,7 +236,7 @@ export const data = [
     desc: 'Классический американский творожный десерт',
     price: 149,
     btn: 'В корзину',
-    category: 'deserts',
+    category: 'desserts',
     quantity: 1,
   },
   {
@@ -246,7 +246,7 @@ export const data = [
     desc: 'Два десерта с хрустящей корочкой и топлёной шоколадной начинкой',
     price: 159,
     btn: 'В корзину',
-    category: 'deserts',
+    category: 'desserts',
     quantity: 1,
   },
   {
@@ -256,7 +256,7 @@ export const data = [
     desc: 'Напиток из молока и мороженого с добавлением дробленого печенья «Орео»',
     price: 159,
     btn: 'В корзину',
-    category: 'deserts',
+    category: 'desserts',
     quantity: 1,
   },
   {
@@ -266,7 +266,7 @@ export const data = [
     desc: 'Напиток из молока и мороженого',
     price: 159,
     btn: 'В корзину',
-    category: 'deserts',
+    category: 'desserts',
     quantity: 1,
   },
   {

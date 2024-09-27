@@ -36,11 +36,15 @@
   .popular {
     padding: 20px 0 30px;
     overflow: hidden;
-    overflow-x: scroll;
 
-    
     &__wrapper {
       margin-top: 10px;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 }

@@ -1,64 +1,55 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import s from './NavPanel.module.scss';
 import { WindowWidthContext } from '../../app/providers/WidthProviders';
+import { ScrollContext } from '../../app/providers/ScrollContext';
 
-export const NavPanel = () => {
+export const NavPanel = ({ isFixed }) => {
   const width = useContext(WindowWidthContext);
+  // const [isFixed, setIsFixed] = useState(false);
 
-  const [isFixed, setIsFixed] = useState(false);
+  // useEffect(() => {
+  //   const nav = document.getElementById('nav');
+  //   const handleScroll = () => {
+  //     if (window.scrollY > nav.offsetTop) {
+  //       setIsFixed(true);
+  //     } else {
+  //       setIsFixed(false);
+  //     }
+  //   };
 
-  useEffect(() => {
-    const nav = document.getElementById('nav');
-    const handleScroll = () => {
-      if (window.scrollY > nav.offsetTop) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    };
+  //   window.addEventListener('scroll', handleScroll);
 
-    window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+  const navList = [
+    { name: 'Пицца', productsId: 'pizza' },
+    { name: 'Комбо', productsId: 'combo' },
+    { name: 'Закуски', productsId: 'snacks' },
+    { name: 'Десерты', productsId: 'desserts' },
+    { name: 'Напитки', productsId: 'drinks' },
+    { name: 'Другие товары', productsId: null },
+  ];
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
     <>
       <nav
-        className={s.nav}
-        id="nav"
-        style={
+        className={`${s.nav} ${
           isFixed && width <= 431
-            ? {
-                position: 'fixed',
-                top: '0',
-                background: '#FFF',
-                boxShadow: '0px 5px 25px 0px rgba(115, 121, 140, 0.10)',
-                padding: '13px 0',
-              }
-            : {}
-        }
+            ? s.nav__fixed
+            : isFixed && width > 431
+            ? s.nav__fixed
+            : ''
+        }`}
+        id="nav"
       >
         <ul className={s.nav__lists}>
-          <li className={s.nav__list}>
-            <a href="#pizza">Пицца</a>
-          </li>
-          <li className={s.nav__list}>
-            <a href="#combo">Комбо</a>
-          </li>
-          <li className={s.nav__list}>
-            <a href="#snacks">Закуски</a>
-          </li>
-          <li className={s.nav__list}>
-            <a href="#desserts">Десерты</a>
-          </li>
-          <li className={s.nav__list}>
-            <a href="#drinks">Напитки</a>
-          </li>
-          <li className={s.nav__list}>
-            <a href="#">Другие товары</a>
-          </li>
+          {navList.map((el, i) => (
+            <li key={i} className={s.nav__list}>
+              <a href={`#${el.productsId}`}>{el.name}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     </>

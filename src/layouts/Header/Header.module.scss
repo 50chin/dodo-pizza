@@ -21,12 +21,29 @@
     font-weight: 400;
     text-align-last: left;
   }
-  
-  &__bottom {
+
+  &__navBar {
     margin-top: 41px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &__button {
+      display: flex;
+      align-items: center;
+    }
+
+    &_fixed {
+      position: fixed;
+      max-width: 1090px;
+      width: 100%;
+      margin-top: 0;
+
+      top: 0;
+      background: #fff;
+      box-shadow: 0px 5px 25px 0px rgba(115, 121, 140, 0.1);
+      padding: 13px 15px;
+    }
   }
 }
 
